@@ -5,9 +5,9 @@ const navShoppingCartIcon = document.querySelector('.navbar-shopping-cart')
 
 const toggleDesktopMenu = () => {
     const desktopMenu = document.getElementById('desktop-menu')
-    const shoppingCartAside = document.querySelector('aside.product-detail')
+    const shoppingCartAside = document.getElementById('cart-detail-container')
 
-    if (!shoppingCartAside.classList.value.includes('transparent')) {
+    if (!shoppingCartAside.classList.contains('hidden')) {
         toggleShoppingCartAside()
     }
 
@@ -16,21 +16,21 @@ const toggleDesktopMenu = () => {
 
 const toggleMobileMenu = () => {
     const mobileMenu = document.querySelector('.mobile-menu')
-    const shoppingCartAside = document.querySelector('aside.product-detail')
+    const shoppingCartAside = document.getElementById('cart-detail-container')
 
-    if (!shoppingCartAside.classList.value.includes('transparent')) {
+    if (!shoppingCartAside.classList.contains('hidden')) {
         toggleShoppingCartAside()
     }
 
-    mobileMenu.classList.toggle('transparent')
+    mobileMenu.classList.toggle('hidden')
 }
 
 const toggleShoppingCartAside = () => {
-    const shoppingCartAside = document.querySelector('aside.product-detail')
+    const shoppingCartAside = document.getElementById('cart-detail-container')
     const mobileMenu = document.querySelector('.mobile-menu')
     const desktopMenu = document.getElementById('desktop-menu')
 
-    if (!mobileMenu.classList.value.includes('transparent')) {
+    if (!mobileMenu.classList.value.includes('hidden')) {
         toggleMobileMenu()
     }
 
@@ -38,7 +38,7 @@ const toggleShoppingCartAside = () => {
         toggleDesktopMenu()
     }
 
-    shoppingCartAside.classList.toggle('transparent')
+    shoppingCartAside.classList.toggle('hidden')
 }
 
 // Event listeners
